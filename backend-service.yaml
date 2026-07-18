@@ -1,0 +1,17 @@
+  GNU nano 8.7.1                       backend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: homework
+  labels:
+    app.kubernetes.io/name: backend
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: backend
+  type: ClusterIP
