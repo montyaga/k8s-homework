@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: homework
+data:
+  BACKEND_URL: "http://backend-service.homework.svc.cluster.local:8080"
