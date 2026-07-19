@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: bind-backend-viewer
+  namespace: homework
+subjects:
+- kind: ServiceAccount
+  name: backend-api-reader
+  namespace: homework
+roleRef:
+  kind: Role
+  name: pod-service-viewer
+  apiGroup: rbac.authorization.k8s.io
